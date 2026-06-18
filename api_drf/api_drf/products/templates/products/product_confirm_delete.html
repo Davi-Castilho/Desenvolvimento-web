@@ -1,0 +1,11 @@
+{% extends 'products/base.html' %}
+
+{% block content %}
+<h1>Excluir produto</h1>
+<p>Tem certeza que deseja excluir o produto "{{ object.name }}"?</p>
+<form method="post">
+    {% csrf_token %}
+    <button class="btn btn-danger" type="submit">Excluir</button>
+    <a class="btn btn-secondary" href="/">Cancelar</a>
+</form>
+{% endblock %}
