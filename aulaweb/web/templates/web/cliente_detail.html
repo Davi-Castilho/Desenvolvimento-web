@@ -1,0 +1,14 @@
+{% extends "web/base.html" %}
+
+{% block conteudo %}
+
+    <h1>Cliente: {{ cliente.nome }}</h1>
+    <br/>
+    <table>
+        <tr>
+            <td>Email: </td>
+            <td>{{ cliente.email }}</td>
+        </tr>
+    </table>
+
+{% endblock %}

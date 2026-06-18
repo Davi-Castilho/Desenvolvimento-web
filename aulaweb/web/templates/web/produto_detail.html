@@ -1,0 +1,26 @@
+{% extends "web/base.html" %}
+
+{% block conteudo %}
+
+    <h1>Produto: {{ produto.nome }}</h1>
+    <br/>
+    <table>
+        <tr>
+            <td>Descrição: </td>
+            <td>{{ produto.descricao }}</td>
+        </tr>
+        <tr>
+            <td>Preço: </td>
+            <td>R$ {{ produto.preco }}</td>
+        </tr>
+        <tr>
+            <td>Quantidade: </td>
+            <td>{{ produto.quantidade_estoque }}</td>
+        </tr>
+        <tr>
+            <td>Categoria: </td>
+            <td>{{ produto.categoria.nome }}</td>
+        </tr>
+    </table>
+
+{% endblock %}
