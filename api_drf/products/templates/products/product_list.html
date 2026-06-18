@@ -1,0 +1,33 @@
+{% extends 'products/base.html' %}
+
+{% block content %}
+<h1>Produtos</h1>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Preço</th>
+            <th>Estoque</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for product in products %}
+            <tr>
+                <td><a href="/produtos/{{ product.pk }}/">{{ product.name }}</a></td>
+                <td>R$ {{ product.price }}</td>
+                <td>{{ product.stock }}</td>
+                <td>
+                    <a class="btn btn-sm btn-secondary" href="/produtos/{{ product.pk }}/">Ver</a>
+                    <a class="btn btn-sm btn-warning" href="/produtos/{{ product.pk }}/editar/">Editar</a>
+                    <a class="btn btn-sm btn-danger" href="/produtos/{{ product.pk }}/excluir/">Excluir</a>
+                </td>
+            </tr>
+        {% empty %}
+            <tr>
+                <td colspan="4">Nenhum produto cadastrado.</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
